@@ -13,9 +13,4 @@ Trinity中文文档
    Trinity_Deployment_Guide_zh.md
 
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

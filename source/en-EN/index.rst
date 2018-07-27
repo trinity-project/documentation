@@ -13,10 +13,3 @@ Trinity documentation
    Trinity_Deployment_Guide_en.md
    
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
