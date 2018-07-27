@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Trinity Network部署帮助文档 &mdash; Trinity 0.2 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Trinity中文文档" href="index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Trinity
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../en-EN/index.html">Trinity documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../en-EN/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Trinity中文文档</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Trinity Network部署帮助文档</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#trinity">Trinity 运行环境准备工作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trinity">Trinity 源码包获取</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trinity">Trinity 路由节点网关部署</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trinity">Trinity 路由节点钱包部署</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#channel">Channel节点交互</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Trinity</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Trinity中文文档</a> &raquo;</li>
+        
+      <li>Trinity Network部署帮助文档</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/zh-CN/Trinity_Deployment_Guide_zh.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trinity-network">
+<span id="trinity-network"></span><h1>Trinity Network部署帮助文档<a class="headerlink" href="#trinity-network" title="Permalink to this headline">¶</a></h1>
+<p>[TOC]</p>
+<blockquote>
+<div><em>注意：
+Trinity 路由节点部署对python3.6有环境依赖，要求部署环境的python版本不低于python3.6。
+随着Trinity项目的不断演进，本文档有可能不适用未来发布的Trinity版本；本文档使用Ubuntu16.04桌面版进行测试验证。</em></div></blockquote>
+<div class="section" id="trinity">
+<span id="trinity"></span><h2>Trinity 运行环境准备工作<a class="headerlink" href="#trinity" title="Permalink to this headline">¶</a></h2>
+<p>安装系统库及系统工具</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install screen git libleveldb-dev libssl-dev g++
+</pre></div>
+</div>
+<p>安装mongodb并启动服务</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+
+<span class="nb">echo</span> <span class="s2">&quot;deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+
+sudo apt-get update
+
+sudo apt-get install mongodb-org
+
+sudo service mongod start
+</pre></div>
+</div>
+<p><em>参考：mongodb部署相关细节请访问 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/</em></p>
+<p>安装python3.6</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install software-properties-common
+
+sudo add-apt-repository ppa:jonathonf/python-3.6
+
+sudo apt-get update
+
+sudo apt-get install python3.6 python3.6-dev
+</pre></div>
+</div>
+<p>安装pip3.6</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo wget https://bootstrap.pypa.io/get-pip.py
+
+sudo python3.6 get-pip.py
+</pre></div>
+</div>
+<p>安装virtualenv</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo pip3.6 install virtualenv
+</pre></div>
+</div>
+</div>
+<div class="section" id="trinity">
+<span id="id1"></span><h2>Trinity 源码包获取<a class="headerlink" href="#trinity" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/trinity-project/trinity.git /home
+</pre></div>
+</div>
+<p>进入trinity源码目录</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/trinity
+</pre></div>
+</div>
+<p>创建及激活虚拟环境</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>virtualenv -p /usr/bin/python3.6 venv
+
+<span class="nb">source</span> venv/bin/activate
+</pre></div>
+</div>
+<p>安装trinity节点依赖包</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install -r requirements
+</pre></div>
+</div>
+</div>
+<div class="section" id="trinity">
+<span id="id2"></span><h2>Trinity 路由节点网关部署<a class="headerlink" href="#trinity" title="Permalink to this headline">¶</a></h2>
+<p>打开gateway配置文件</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>vi gateway/config.py
+</pre></div>
+</div>
+<p>将<code class="docutils literal notranslate"><span class="pre">cg_public_ip_port</span> <span class="pre">=</span> <span class="pre">&quot;localhost:8089&quot;</span></code>中的localhost配置为用户自己的公网ip地址。</p>
+<p>如：cg_public_ip_port = “8.8.8.8:8089”</p>
+<p>新建会话窗口</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>screen -S TrinityGateway <span class="c1">#TrinityGateway: 用户可替换该名称</span>
+</pre></div>
+</div>
+<p>进入虚拟环境</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> venv/bin/activate
+</pre></div>
+</div>
+<p>运行网关服务</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python start.py
+</pre></div>
+</div>
+<p>控制台输出如下消息启动成功</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">###### Trinity Gateway Start Successfully! ######</span>
+</pre></div>
+</div>
+<p>使用<code class="docutils literal notranslate"><span class="pre">ctrl+a+d</span></code>键盘按键退出当前TrinityGateway会话窗口</p>
+<p>注：若需要重连已创建的名为TrinityGateway的会话窗口，可使用如下命令</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>screen -r TrinityGateway
+</pre></div>
+</div>
+</div>
+<div class="section" id="trinity">
+<span id="id3"></span><h2>Trinity 路由节点钱包部署<a class="headerlink" href="#trinity" title="Permalink to this headline">¶</a></h2>
+<p>修改配置文件</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>vi wallet/configure.py 
+</pre></div>
+</div>
+<p>默认configure文件为测试网配置文件，同时在wallet目录下有configure_testnet.py和configure_mainnet.py两个配置文件，如果部署主网可简单将configure_mainnet.py的内容复制到configure.py中。
+具体配置信息请参考配置文件注释说明。</p>
+<p>创建新窗口会话</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>    screen -S TrinityWallet <span class="c1">#TrinityWallet: 用户可替换该名称</span>
+</pre></div>
+</div>
+<p>激活python3.6 virtualenv(进入到venv所在的文件夹目录)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>   <span class="nb">source</span> venv/bin/activate
+</pre></div>
+</div>
+<p>运行钱包服务（进入trinity/wallet源码目录）</p>
+<ul class="simple">
+<li>主链钱包</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>    python3.6 prompt.py -m <span class="c1">#主链钱包</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>测试网钱包</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>   python3.6 prompt.py <span class="c1">#测试网钱包</span>
+</pre></div>
+</div>
+<p>退出或重连网关会话请参考网关运行章节中的内容。</p>
+</div>
+<div class="section" id="channel">
+<span id="channel"></span><h2>Channel节点交互<a class="headerlink" href="#channel" title="Permalink to this headline">¶</a></h2>
+<p>trinity CLI钱包运行之后，即可在钱包控制台进行钱包及通道的相关操作了。</p>
+<p>钱包控制台输入help查看所有trinity CLI钱包命令。</p>
+<p>这里仅介绍几个和通道相关的命令：</p>
+<p>1.使用状态通道前，需要先使用create wallet 命令创建一个地址。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trinity&gt; create wallet /root/test/test.json <span class="c1"># /root/test/test.json 为钱包文件路径</span>
+</pre></div>
+</div>
+<p>2.open wallet 打开已有钱包，注意：这里应该打开带有通道功能的钱包，否则通能功能将被限制。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trinity&gt; open wallet /root/test/test.json
+</pre></div>
+</div>
+<p>注：
+新建钱包或打开钱包以后，wallet会主动连接gateway并打开channel功能，如果30s内没有自动打开channel功能，请使用以下命令手动打开channel功能.</p>
+<p>3.channel enable命令进行channel功能的使能，只有使能channel功能之后才能进行状态通道相关的其他操作。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trinity&gt; channel <span class="nb">enable</span> 
+</pre></div>
+</div>
+<p>4.channel show uri 查看钱包uri</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trinity&gt; channel show uri
+</pre></div>
+</div>
+<p>5.channel create创建通道。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trinity&gt; channel create xxxxxxxxxxxxx@xx.xx.xx.xx:xxxx TNC <span class="m">80000</span> 
+<span class="c1"># create 后的参数：peer节点uri(PublicKey@ip_address:port）, asset_type, depoist</span>
+</pre></div>
+</div>
+<p><em>注：
+TNC押金数量是以800美金的价格计算。假设当前TNC价值1美金，那最低需要800个TNC才能保障通道建立成功，可以通过如下命令获取当前时间所需要的TNC押金，目前这条规则仅对TNC通道有效</em></p>
+<p>6.channel depoist_limit查看当前TNC押金最小值。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trinity&gt; channel depoist_limit
+</pre></div>
+</div>
+<p>7.channel tx命令进行状态通道的链下交易操作，tx后的参数可以支持paymentlink码，也可以是uri + asset + value。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trinity&gt; channel tx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <span class="c1"># payment link 码</span>
+</pre></div>
+</div>
+<p>或</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trinity&gt; channel tx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@xx.xx.xx.xx:xxxx TNC <span class="m">10</span>
+</pre></div>
+</div>
+<p>8.channel payment生成付款码。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trinity&gt; channel payment TNC <span class="m">10</span> <span class="s2">&quot;mytest&quot;</span> <span class="c1"># payment 后面的参数是 asset type， value，comments， comments可以为空</span>
+</pre></div>
+</div>
+<p>9.channel close命令进行状态通道的结算并关闭通道。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trinity&gt; channel close xxxxxxxxxxxxxxx <span class="c1">#close后的参数为 channel name</span>
+</pre></div>
+</div>
+<p>10.channel peer查看当前channel的peer节点</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trinity&gt; channel peer
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Trinity中文文档" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Trinity.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.2',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
