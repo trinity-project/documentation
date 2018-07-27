@@ -10,7 +10,8 @@ Welcome to Trinity_cookbook's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   Trinity_Deployment_Guide_en.md
+   en-EN/index.rst
+   zh-CN/index.rst
 
 
 Indices and tables
