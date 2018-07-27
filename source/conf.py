@@ -20,17 +20,14 @@
 # -- Project information -----------------------------------------------------
 
 project = u'Trinity'
-copyright = u'2018, trinity'
-author = u'trinity'
+copyright = u'2018, Trinity'
+author = u'Trinity'
 
 # The short X.Y version
 version = u''
 # The full version, including alpha/beta/rc tags
-release = u'v0.2'
+release = u'0.2'
 
-import sphinx_rtd_theme
-html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # -- General configuration ---------------------------------------------------
 
@@ -45,19 +42,18 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['ytemplates']
+templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-# source_suffix = '.rst'
+#source_suffix = '.rst'
 from recommonmark.parser import CommonMarkParser
 source_parsers = {
     '.md': CommonMarkParser,
 }
 source_suffix = ['.rst', '.md']
-
 # The master toctree document.
 master_doc = 'index'
 
@@ -82,7 +78,7 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -93,7 +89,7 @@ html_theme = 'alabaster'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['ystatic']
+html_static_path = ['_static']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -109,7 +105,7 @@ html_static_path = ['ystatic']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Trinity_cookbookdoc'
+htmlhelp_basename = 'Trinitydoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -136,8 +132,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Trinity_cookbook.tex', u'Trinity\\_cookbook Documentation',
-     u'trinity', 'manual'),
+    (master_doc, 'Trinity.tex', u'Trinity Documentation',
+     u'Trinity', 'manual'),
 ]
 
 
@@ -146,7 +142,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'trinity_cookbook', u'Trinity_cookbook Documentation',
+    (master_doc, 'trinity', u'Trinity Documentation',
      [author], 1)
 ]
 
@@ -157,7 +153,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Trinity_cookbook', u'Trinity_cookbook Documentation',
-     author, 'Trinity_cookbook', 'One line description of project.',
+    (master_doc, 'Trinity', u'Trinity Documentation',
+     author, 'Trinity', 'One line description of project.',
      'Miscellaneous'),
 ]
