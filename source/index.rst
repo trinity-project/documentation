@@ -14,9 +14,3 @@ Welcome to Trinity_cookbook's documentation!
    zh-CN/index.rst
 
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
