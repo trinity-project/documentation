@@ -11,6 +11,4 @@ Trinity中文文档
    :caption: Contents:
    
    Trinity_Deployment_Guide_zh.md
-
-
-
+   Trinity_Eth_Deployment_Guide_zh.md
