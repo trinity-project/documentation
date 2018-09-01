@@ -1,4 +1,4 @@
-# Trinity Network Configuration Guide
+# Trinity-Eth Network Configuration Guide
 
 [TOC]
 

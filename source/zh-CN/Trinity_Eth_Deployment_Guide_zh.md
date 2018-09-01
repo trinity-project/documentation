@@ -1,4 +1,4 @@
-# Trinity Network部署帮助文档
+# Trinity-Eth Network部署帮助文档
 
 [TOC]
 
