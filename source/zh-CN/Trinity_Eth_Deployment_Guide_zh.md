@@ -1,10 +1,8 @@
 # Trinity-Eth Network部署帮助文档
 
-[TOC]
-
 > *注意：
-Trinity 路由节点部署对python3.6有环境依赖，要求部署环境的python版本不低于python3.6。
-随着Trinity项目的不断演进，本文档有可能不适用未来发布的Trinity版本；本文档使用Ubuntu16.04桌面版进行测试验证。*
+> Trinity 路由节点部署对python3.6有环境依赖，要求部署环境的python版本不低于python3.6。
+> 随着Trinity项目的不断演进，本文档有可能不适用未来发布的Trinity版本；本文档使用Ubuntu16.04桌面版进行测试验证。*
 
 ## Trinity 运行环境准备工作
 

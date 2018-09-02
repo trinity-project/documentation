@@ -1,9 +1,8 @@
 # Trinity-Eth Network Configuration Guide
 
-[TOC]
+> note：Trinity routing nodes require the configuration environment be no less than python3.6.    
+> As Trinity develops, this file may not apply to the new version. This file was tested on Ubuntu16.04 desktop.
 
-note：Trinity routing nodes require the configuration environment be no less than python3.6.    
-As Trinity develops, this file may not apply to the new version. This file was tested on Ubuntu16.04 desktop.
 
 ## Trinity Runtime Environment Preparation
 
@@ -211,7 +210,9 @@ trinity> channel enable
 
 4.channel show uri
 
+``` shell
 trinity> channel show uri
+```
 
 5.Use channel create
 
