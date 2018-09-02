@@ -12,5 +12,4 @@ Trinity documentation
    
    Trinity_Deployment_Guide_en.md
    Trinity_Eth_Deployment_Guide_en.md
-   
 

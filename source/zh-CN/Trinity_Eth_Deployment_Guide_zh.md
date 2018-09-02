@@ -168,7 +168,7 @@ vi wallet/configure.py
 
 运行钱包服务（进入trinity/wallet源码目录）
 
- - 主链钱包
+- 主链钱包
 
 ``` shell
     python3.6 prompt.py -m #主链钱包
@@ -181,7 +181,6 @@ vi wallet/configure.py
 ```
 
 退出或重连网关会话请参考网关运行章节中的内容。
-
 
 ## Channel节点交互
 
@@ -202,18 +201,22 @@ trinity> create wallet /root/test/test.json # /root/test/test.json 为钱包文�
 ```shell
 trinity> open wallet /root/test/test.json
 ```
+
 注：
 新建钱包或打开钱包以后，wallet会主动连接gateway并打开channel功能，如果30s内没有自动打开channel功能，请使用以下命令手动打开channel功能.
-   
+
 3.channel enable命令进行channel功能的使能，只有使能channel功能之后才能进行状态通道相关的其他操作。
 
 ```shell
 trinity> channel enable 
 ```
+
 4.channel show uri 查看钱包uri
+
 ```shell
 trinity> channel show uri
 ```
+
 5.channel create创建通道。
 
 ```shell
@@ -235,6 +238,7 @@ trinity> channel depoist_limit
 ```shell
 trinity> channel tx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx # payment link 码
 ```
+
 或
 
 ``` shell

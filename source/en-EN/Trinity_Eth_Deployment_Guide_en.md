@@ -63,7 +63,7 @@ git clone https://github.com/trinity-project/trinity-eth.git /home ##clone walle
 git clone https://github.com/trinity-project/trinity-gateway.git /home ##clone gateway source code
 ```
 
-Open trinity-eth source code catalo
+Open trinity-eth source code catalog
 
 ``` shell
 cd /home/trinity-eth
@@ -77,13 +77,13 @@ virtualenv -p /usr/bin/python3.6 venv
 source venv/bin/activate
 ```
 
-Install trinity node requirement package
+Install gateway node requirement package
 
 ``` shell
 pip install -r requirements
 ```
 
-Open gateway source code catalo
+Open gateway source code catalog
 
 ``` shell
 cd /home/gateway
@@ -148,6 +148,7 @@ Revise configuration file
 ``` shell
 vi wallet/configure.py 
 ```
+
 The default configure file applies to the testnet, for which configure_testnet.py and configure_mainnet.py co-exist in the wallet catalog. For the mainnet, simply copy configure_mainnet.py and paste it to configure.py. 
 
 Please refer to notes for configuration details.
@@ -166,7 +167,7 @@ Activate python3.6 virtualenv
 
 Run the Gateway service（Enter trinity/ wallet source code catelog)
 
- - Mainnet Wallet
+- Mainnet Wallet
 
 ``` shell
     python3.6 prompt.py -m
@@ -179,7 +180,6 @@ Run the Gateway service（Enter trinity/ wallet source code catelog)
 ```
 
 close or reopen the gateway session please refer to the details of 'run the gateway service'
-
 
 ## Channel Nodes Interworking
 
@@ -200,8 +200,9 @@ trinity> create wallet /root/test/test.json # /root/test/test.json is the path o
 ```shell
 trinity> open wallet /root/test/test.json
 ```
+
 Note:After creating or re-opening a wallet, the wallet will automatically connect to the gateway and enable channel function. If channel function was not enabled within 30s, please call channel function to open it manually
-   
+
 3.Use channel enable command to activate channel function before operating on state channels.
 
 ```shell
@@ -231,6 +232,7 @@ trinity> channel depoist_limit
 ```shell
 trinity> channel tx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx # payment link code
 ```
+
 or
 
 ``` shell
@@ -240,13 +242,13 @@ trinity> channel tx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@xx.xx.xx.xx:xxxx TNC 10
 8.Call channel payment to generate payment code
 
 ```shell
-trinity> channel payment TNC 10 "mytest"
+trinity> channel payment TNC 10 "mytest" # asset type，value， comments
 ```
 
 9.Call channel close to complete settlement and close the channel
 
 ```shell
-trinity> channel close xxxxxxxxxxxxxxx
+trinity> channel close xxxxxxxxxxxxxxx # channel name
 ```
 
 10.channel peer is for peer node review
