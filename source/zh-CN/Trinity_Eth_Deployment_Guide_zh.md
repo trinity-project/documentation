@@ -90,7 +90,7 @@ source venv/bin/activate
 安装trinity节点依赖包
 
 ``` shell
-pip install -r requirements
+pip install -r requirments
 ```
 
 进入wallet源码目录
@@ -102,7 +102,7 @@ cd /home/wallet
 安装wallet依赖包
 
 ``` shell
-pip install -r requirements
+pip install -r requirments
 ```
 
 ## Trinity 路由节点网关部署
