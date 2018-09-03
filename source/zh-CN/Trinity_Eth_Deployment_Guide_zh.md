@@ -17,7 +17,7 @@ sudo apt-get install screen git libleveldb-dev libssl-dev g++
 ``` shell
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
 
-echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sourcves.list.d/mongodb-org-3.6.list
 
 sudo apt-get update
 
@@ -27,7 +27,7 @@ sudo service mongod start
 
 ```
 
-*参考：mongodb部署相关细节请访问 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/*
+*参考：mongodb部署相关细节请访问 [https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)*
 
 安装python3.6
 
