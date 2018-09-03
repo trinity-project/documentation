@@ -6,12 +6,12 @@
 
 ## Trinity 运行环境准备工作
 
->说明：Trinity采用python3.6开发，在python开发中一个非常有用的工具virtualenv是用来建立一个虚拟的python环境，一个专属于项目的python环境。用virtualenv来保持一个干净的环境非常有用， 本文档也推荐在搭建节点的过程中使用virtaulenv来保持您一个干净的环境， 更多virtualenv的文档请参阅：[https://virtualenv.pypa.io/en/stable/](https://virtualenv.pypa.io/en/stable/)
+> 说明：Trinity采用python3.6开发，在python开发中一个非常有用的工具virtualenv是用来建立一个虚拟的python环境，一个专属于项目的python环境。用virtualenv来保持一个干净的环境非常有用， 本文档也推荐在搭建节点的过程中使用virtaulenv创建一个虚拟环境，更多virtualenv的文档请参阅：[https://virtualenv.pypa.io/en/stable/](https://virtualenv.pypa.io/en/stable/)
 同时，python中pip是python的包管理工具可以方便的安装和管理项目所需要的依赖库，更多pip请参阅： [https://pip.pypa.io/en/stable/](https://pip.pypa.io/en/stable/)
 
 > Trinity中使用了mongodb作为本地数据，mongodb是一款著名的开源no-sql数据库，有着高性能、易部署、易使用，存储数据非常方便的显著特点，更多关于mongodb的资料请参阅：[https://www.mongodb.com/](https://www.mongodb.com/)
 
-> Trinity节点在对外通信过程中需要指定您可达的公网ip以及您在接下来配置中用的端口，请确保防火墙咩有将其关闭，如果您是购买的云服务器请参阅您的服务商文档，如果您使用的是本地服务器，请详细资讯你的网络服务商
+> Trinity节点在对外通信过程中需要指定您可达的公网ip以及您在接下来配置中用的端口，请确保防火墙没有将其关闭，如果您是购买的云服务器请参阅您的服务商文档，如果您使用的是本地服务器，请详细资讯你的网络服务商
 
 
 ### 安装依赖工具
