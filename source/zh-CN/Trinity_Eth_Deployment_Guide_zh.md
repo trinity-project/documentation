@@ -156,10 +156,10 @@ screen -r TrinityGateway
 
 修改配置文件
 
-``` shell
-vi wallet/configure.py 
+```shell
+cd <your dictionary>/trinity-eth/wallet
 ```
-默认configure文件为测试网配置文件，同时在wallet目录下有configure_testnet.py和configure_mainnet.py两个配置文件，如果部署主网可简单将configure_mainnet.py的内容复制到configure.py中。
+进入到trinity-eth的wallet路径下，在该路径下默认trinity.py文件为测试网配置文件，同时在wallet目录下有trinity.py和trinity_mainnet.py两个配置文件，如果部署主网可简单将trinity_mainnet.py的内容复制到trinity.py中。
 具体配置信息请参考配置文件注释说明。
 
 
@@ -202,13 +202,13 @@ trinity CLI钱包运行之后，即可在钱包控制台进行钱包及通道的
 1.使用状态通道前，需要先使用create wallet 命令创建一个地址。
 
 ```shell
-trinity> create wallet /root/test/test.json # /root/test/test.json 为钱包文件路径
+trinity> create wallet <your wallet file name> # /root/test/test.json 为钱包文件路径
 ```
 
 2.open wallet 打开已有钱包，注意：这里应该打开带有通道功能的钱包，否则通道功能将被限制。
 
 ```shell
-trinity> open wallet /root/test/test.json
+trinity> open wallet <your wallet file name>
 ```
 
 注：
