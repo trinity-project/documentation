@@ -205,7 +205,7 @@ trinity CLI钱包运行之后，即可在钱包控制台进行钱包及通道的
 trinity> create wallet /root/test/test.json # /root/test/test.json 为钱包文件路径
 ```
 
-2.open wallet 打开已有钱包，注意：这里应该打开带有通道功能的钱包，否则通能功能将被限制。
+2.open wallet 打开已有钱包，注意：这里应该打开带有通道功能的钱包，否则通道功能将被限制。
 
 ```shell
 trinity> open wallet /root/test/test.json
