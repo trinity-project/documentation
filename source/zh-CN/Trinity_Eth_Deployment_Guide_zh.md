@@ -94,13 +94,13 @@ source venv/bin/activate
 pip install -r requirements
 ```
 
-进入gateway源码目录
+进入gateway源码目录
 
 ``` shell
 cd <your dictionary>/getway
 ```
 
-安装wallet依赖包
+安装gateway依赖包
 
 ``` shell
 pip install -r requirements
