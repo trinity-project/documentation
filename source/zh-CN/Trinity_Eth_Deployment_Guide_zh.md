@@ -13,7 +13,7 @@
 
 > Trinity节点在对外通信过程中需要指定您可达的公网ip以及您在接下来配置中用的端口，请确保防火墙没有将其关闭，如果您是购买的云服务器请参阅您的服务商文档，如果您使用的是本地服务器，请详细咨询你的网络服务商。
 
-> 本文使用screen
+> 本文使用screen作为会话窗口，更多screen的使用请参考：[http://man7.org/linux/man-pages/man1/screen.1.html](http://man7.org/linux/man-pages/man1/screen.1.html)
 
 ### 安装依赖工具
 安装系统库及系统工具
