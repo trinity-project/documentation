@@ -66,9 +66,10 @@ sudo pip3.6 install virtualenv
 
 ## Trinity 源码包获取
 
+
 ``` shell
-git clone https://github.com/trinity-project/trinity-eth.git /home ##获取wallet代码
-git clone https://github.com/trinity-project/trinity-gateway.git /home ##获取gateway代码
+git clone https://github.com/trinity-project/trinity-eth.git <your dictionary> ##获取wallet代码
+git clone https://github.com/trinity-project/trinity-gateway.git <your dictionary> ##获取gateway代码
 ```
 
 
@@ -76,7 +77,7 @@ git clone https://github.com/trinity-project/trinity-gateway.git /home ##获取g
 进入trinity-eth源码目录
 
 ``` shell
-cd /home/trinity-eth
+cd <your dictionary>/trinity-eth
 ```
 
 创建及激活虚拟环境
@@ -90,19 +91,19 @@ source venv/bin/activate
 安装trinity节点依赖包
 
 ``` shell
-pip install -r requirments
+pip install -r requirements
 ```
 
-进入wallet源码目录
+进入gateway源码目录
 
 ``` shell
-cd /home/wallet
+cd <your dictionary>/getway
 ```
 
 安装wallet依赖包
 
 ``` shell
-pip install -r requirments
+pip install -r requirements
 ```
 
 ## Trinity 路由节点网关部署
