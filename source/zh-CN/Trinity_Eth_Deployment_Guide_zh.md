@@ -95,18 +95,6 @@ source venv/bin/activate
 pip install -r requirements
 ```
 
-进入gateway源码目录
-
-``` shell
-cd <your dictionary>/trinity-gateway
-```
-
-安装gateway依赖包
-
-``` shell
-pip install -r requirements
-```
-
 ## Trinity 路由节点网关部署
 
 打开gateway配置文件
@@ -202,7 +190,7 @@ trinity CLI钱包运行之后，即可在钱包控制台进行钱包及通道的
 1.使用状态通道前，需要先使用create wallet 命令创建一个地址。
 
 ```shell
-trinity> create wallet <your wallet file name> # /root/test/test.json 为钱包文件路径
+trinity> create wallet <your wallet file name>
 ```
 
 2.open wallet 打开已有钱包，注意：这里应该打开带有通道功能的钱包，否则通道功能将被限制。
