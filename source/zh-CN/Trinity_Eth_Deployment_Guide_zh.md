@@ -227,7 +227,7 @@ TNC押金数量是以800美金的价格计算。假设当前TNC价值1美金，�
 6.channel depoist_limit查看当前TNC押金最小值。
 
 ```shell
-trinity> channel depoist_limit
+trinity> channel deposit_limit
 ```
 
 7.channel tx命令进行状态通道的链下交易操作，tx后的参数可以支持paymentlink码，也可以是uri + asset + value。
