@@ -13,6 +13,7 @@
 
 > Trinity节点在对外通信过程中需要指定您可达的公网ip以及您在接下来配置中用的端口，请确保防火墙没有将其关闭，如果您是购买的云服务器请参阅您的服务商文档，如果您使用的是本地服务器，请详细咨询你的网络服务商。
 
+> 本文使用screen
 
 ### 安装依赖工具
 安装系统库及系统工具
@@ -97,7 +98,7 @@ pip install -r requirements
 进入gateway源码目录
 
 ``` shell
-cd <your dictionary>/getway
+cd <your dictionary>/trinity-gateway
 ```
 
 安装gateway依赖包
