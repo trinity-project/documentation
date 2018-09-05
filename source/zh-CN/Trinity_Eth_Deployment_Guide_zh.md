@@ -177,7 +177,7 @@ cd <your dictionary>/trinity-eth/wallet
    python3.6 prompt.py #测试网钱包
 ```
 
-退出或重连网关会话请参考网关运行章节中的内容。
+退出或重连钱包会话请参考网关运行章节中的内容。
 
 ## Channel节点交互
 
