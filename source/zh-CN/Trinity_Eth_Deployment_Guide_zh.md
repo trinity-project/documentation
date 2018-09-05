@@ -103,9 +103,9 @@ pip install -r requirements
 vi gateway/config.py
 ```
 
-将`cg_public_ip_port = "localhost:8089"`中的localhost配置为用户自己的公网ip地址。
+将`cg_public_ip_port = "localhost:8189"`中的localhost配置为用户自己的公网ip地址。
 
-如：cg_public_ip_port = "8.8.8.8:8089"
+如：cg_public_ip_port = "8.8.8.8:8189"
 
 新建会话窗口
 
