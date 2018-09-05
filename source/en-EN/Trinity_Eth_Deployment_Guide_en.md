@@ -1,7 +1,7 @@
-#Trinity-ETH Network Configuration Guide
+# Trinity-ETH Network Configuration Guide
 >Note: Trinity node deployment process requires the configuration environment be python 3.6 and above versions. 
 As the Trinity project continues to evolve, this file may not apply to the Trinity network released in the future; this file was tested on Ubuntu 16.04.
-##Trinity Runtime Environment Preparation
+## Trinity Runtime Environment Preparation
 >Description: Trinity is developed based on Python 3.6. A very useful tool with python is virtualenv, which is used to build an isolated virtual python environment for the project. It is key to maintain a clean environment during configuration. This file recommends using vitraulenv to keep you in the process of building a node. Details of virtualenv can be found at: https://virtualenv.pypa.io/ En/stable/. Another package management tool with python is Pip, which helps developer easily installed and manage the project. For more information on Pip, please refer to: https://pip.pypa.io/en/stable/
 
 >Trinity uses mongodb as local data base. Mongodb is a well-known open source no-sql database. It has high performance, easy to deploy and use for data storage. For more information about mongodb, please refer to: https ://www.mongodb.com/
@@ -10,7 +10,7 @@ As the Trinity project continues to evolve, this file may not apply to the Trini
 
 >This file uses Screen as terminals. For more info on Screen, please visit: http://man7.org/linux/man-pages/man1/screen.1.html 
 
-###Install the Dependency Tools
+### Install the Dependency Tools
 Install system libraries and system tools
 
 ```
@@ -56,7 +56,7 @@ Install virtualenv
 ```
 sudo pip3.6 install virtualenv
 ```
-##Get Trinity Source Code
+## Get Trinity Source Code
 
 ```
 git clone https://github.com/trinity-project/trinity-eth.git <your dictionary> ##get wallet code
@@ -97,7 +97,7 @@ Install the trinity node dependency package
 pip install -r requirements
 ```
 
-##Install Trinity Routing Node Gateway 
+## Install Trinity Routing Node Gateway 
 
 Open gateway configuration file
 
@@ -136,7 +136,7 @@ Use ctrl+a+d to detach the current TrinityGateway session window.
 ```
 screen -r TrinityGateway
 ```
-##Install Trinity Routing Node Wallet
+## Install Trinity Routing Node Wallet
 
 Modify configuration file
 
@@ -172,7 +172,7 @@ python3.6 prompt.py #testnet wallet
 
 *To detach or resume the wallet session, please refer to the section of running gateways.*
 
-##Channel Nodes Interworking
+## Channel Nodes Interworking
 
 After the running of Trinity CLI wallet, the subsequent wallet and channel operations can be performed on the console.
 Input ‘help’ to the wallet console to view all trinity CLI wallet commands. 
