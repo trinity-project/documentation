@@ -178,7 +178,8 @@ After the running of Trinity CLI wallet, the subsequent wallet and channel opera
 Input ‘help’ to the wallet console to view all trinity CLI wallet commands. 
 Here are a few channel-related commands: 
 
-  1. Use create wallet command to set up an address before using the channel.
+1. Use create wallet command to set up an address before using the channel.
+
 ```shell
 trinity> create wallet <your wallet file name> 
 ```
@@ -187,7 +188,8 @@ trinity> create wallet <your wallet file name>
 ```
 trinity> open wallet <your wallet file name>
 ```
-*Note: after creating or re-opening a wallet, the wallet will automatically connect to the gateway and enable channel function. If channel function was not enabled within 30s, please call channel function to open it manually.*
+    Note: after creating or re-opening a wallet, the wallet will automatically connect to the gateway and enable channel function. If channel function was not enabled within 30s, please call channel function to open it manually.*
+
   3. Use channel enable command to enable channel function before operating on state channels.
 ```
 trinity> channel enable 
