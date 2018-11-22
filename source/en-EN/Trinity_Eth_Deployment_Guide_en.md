@@ -179,73 +179,50 @@ Input ‘help’ to the wallet console to view all trinity CLI wallet commands.
 Here are a few channel-related commands: 
 
   1. Use create wallet command to set up an address before using the channel.
-
-```
+```shell
 trinity> create wallet <your wallet file name> 
 ```
-
   2. Open the existing wallet.
-
 *Note: The wallet to be opened should have state-channel functions, otherwise the function will be limited.*
-
 ```
 trinity> open wallet <your wallet file name>
 ```
-
 *Note: after creating or re-opening a wallet, the wallet will automatically connect to the gateway and enable channel function. If channel function was not enabled within 30s, please call channel function to open it manually.*
-
   3. Use channel enable command to enable channel function before operating on state channels.
-
 ```
 trinity> channel enable 
 ```
-
   4. View the wallet uir through channel show uri command
-
 ```
 trinity> channel show uri
 ```
-
   5. Create channel
-
 ```
 trinity> channel create xxxxxxxxxxxxx@xx.xx.xx.xx:xxxx TNC 80000 # create parameters：peer node uri(PublicKey@ip_address:port）, asset_type, deposit
 ```
-
 *Note: TNC deposit is calculated on 800 USD, which means 800 TNC is required if TNC current price is $ 1 USD. The command below will tell how much TNC is needed currently for deposit. This is only valid for TNC channel.*
-
   6. Call channel depoist_limit to check the minimum TNC deposit
 
 ```
 trinity> channel deposit_limit
 ```
-
   7. Call channel tx to execute off-chain transactions. Use paymentlink code, or uri + asset + value as tx parameters.
-
 ```
 trinity> channel tx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx # payment link 
 ```
-
 Or
-
 ```
 trinity> channel tx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@xx.xx.xx.xx:xxxx TNC 10
 ```
-
   8. Call channel payment to generate payment code
-
 ```
 trinity> channel payment TNC 10 "mytest" # payment parameters: asset type， value，comments， comments can be empty
 ```
-
   9. Call channel close to complete settlement and close the channel
-
 ```
 trinity> channel close xxxxxxxxxxxxxxx #close parameters: channel name
 ```
-
   10. Call channel peer to check peer nodes in the current channel
-
 ```
 trinity> channel peer
 ```
