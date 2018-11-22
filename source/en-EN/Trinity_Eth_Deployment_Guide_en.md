@@ -198,15 +198,10 @@ trinity> channel show uri
 ```
   5. Create channel
 ```
-trinity> channel create xxxxxxxxxxxxx@xx.xx.xx.xx:xxxx TNC 80000 # create parameters：peer node uri(PublicKey@ip_address:port）, asset_type, deposit
+trinity> channel create xxxxxxxxxxxxx@xx.xx.xx.xx:xxxx TNC 80000 # create parameters：peer node uri(PublicKey@ip_address:port）, asset_type, deposit*
 ```
-*Note: TNC deposit is calculated on 800 USD, which means 800 TNC is required if TNC current price is $ 1 USD. The command below will tell how much TNC is needed currently for deposit. This is only valid for TNC channel.*
-  6. Call channel depoist_limit to check the minimum TNC deposit
+6. Call channel tx to execute off-chain transactions. Use paymentlink code, or uri + asset + value as tx parameters.
 
-```
-trinity> channel deposit_limit
-```
-  7. Call channel tx to execute off-chain transactions. Use paymentlink code, or uri + asset + value as tx parameters.
 ```
 trinity> channel tx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx # payment link 
 ```
@@ -214,15 +209,18 @@ Or
 ```
 trinity> channel tx xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@xx.xx.xx.xx:xxxx TNC 10
 ```
-  8. Call channel payment to generate payment code
-```
+7. Call channel payment to generate payment code
+
+```shell
 trinity> channel payment TNC 10 "mytest" # payment parameters: asset type， value，comments， comments can be empty
 ```
-  9. Call channel close to complete settlement and close the channel
+8. Call channel close to complete settlement and close the channel
+
 ```
 trinity> channel close xxxxxxxxxxxxxxx #close parameters: channel name
 ```
-  10. Call channel peer to check peer nodes in the current channel
+9. Call channel peer to check peer nodes in the current channel
+
 ```
 trinity> channel peer
 ```
